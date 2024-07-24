@@ -1,9 +1,10 @@
 import { db } from "@/db";
 import Link from "next/link";
 
+// export const dynamic = "force-dynamic";
+
 const Home = async () => {
   const snippets = await db.snippets.findMany();
-  console.log("🚀 ~ Home ~ snippets:", snippets);
 
   const renderedSnippets = snippets.map((snippet) => {
     return (
